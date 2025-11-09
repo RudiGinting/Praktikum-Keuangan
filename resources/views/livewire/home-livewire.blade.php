@@ -4,16 +4,14 @@
     <input type="hidden" id="totalPengeluaran" value="{{ $totalPengeluaran }}">
     <input type="hidden" id="saldoAkhir" value="{{ $saldoAkhir }}">
 
-    {{-- Statistik Data dengan Design Ultra Modern --}}
+    {{-- Statistik Data dengan Design yang Lebih Bersih --}}
     <div class="row mb-5">
         <div class="col-xl-4 col-md-6 mb-4">
-            <div class="stat-card card-income-glass position-relative overflow-hidden">
-                <div class="card-blur-bg"></div>
-                <div class="card-content position-relative">
+            <div class="stat-card card-income position-relative overflow-hidden">
+                <div class="card-content">
                     <div class="d-flex align-items-center">
                         <div class="icon-wrapper me-3">
                             <i class="bi bi-arrow-down-circle"></i>
-                            <div class="pulse-effect"></div>
                         </div>
                         <div class="flex-grow-1">
                             <h6 class="card-label mb-1">TOTAL PEMASUKAN</h6>
@@ -28,22 +26,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
             </div>
         </div>
         
         <div class="col-xl-4 col-md-6 mb-4">
-            <div class="stat-card card-expense-glass position-relative overflow-hidden">
-                <div class="card-blur-bg"></div>
-                <div class="card-content position-relative">
+            <div class="stat-card card-expense position-relative overflow-hidden">
+                <div class="card-content">
                     <div class="d-flex align-items-center">
                         <div class="icon-wrapper me-3">
                             <i class="bi bi-arrow-up-circle"></i>
-                            <div class="pulse-effect"></div>
                         </div>
                         <div class="flex-grow-1">
                             <h6 class="card-label mb-1">TOTAL PENGELUARAN</h6>
@@ -58,22 +49,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
             </div>
         </div>
         
         <div class="col-xl-4 col-md-12 mb-4">
-            <div class="stat-card card-balance-glass position-relative overflow-hidden">
-                <div class="card-blur-bg"></div>
-                <div class="card-content position-relative">
+            <div class="stat-card card-balance position-relative overflow-hidden">
+                <div class="card-content">
                     <div class="d-flex align-items-center">
                         <div class="icon-wrapper me-3">
                             <i class="bi bi-wallet2"></i>
-                            <div class="pulse-effect"></div>
                         </div>
                         <div class="flex-grow-1">
                             <h6 class="card-label mb-1">SALDO AKHIR</h6>
@@ -88,19 +72,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
             </div>
         </div>
     </div>
 
-    {{-- Charts Section dengan Glassmorphism --}}
+    {{-- Charts Section dengan Desain Lebih Bersih --}}
     <div class="row mb-4">
         <div class="col-xl-6 col-lg-12 mb-4">
-            <div class="glass-card chart-container-hover">
+            <div class="chart-card">
                 <div class="chart-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="chart-title">
@@ -120,7 +99,7 @@
         </div>
         
         <div class="col-xl-6 col-lg-12 mb-4">
-            <div class="glass-card chart-container-hover">
+            <div class="chart-card">
                 <div class="chart-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="chart-title">
@@ -140,8 +119,8 @@
         </div>
     </div>
 
-    {{-- Action Bar dengan Design Modern --}}
-    <div class="glass-card action-bar mb-4">
+    {{-- Action Bar dengan Desain Minimalis --}}
+    <div class="action-bar mb-4">
         <div class="row align-items-center">
             <div class="col-md-8">
                 <div class="search-container">
@@ -150,24 +129,22 @@
                            class="search-input" 
                            placeholder="Cari berdasarkan deskripsi atau jumlah..." 
                            wire:model.live="search">
-                    <div class="search-focus-line"></div>
                 </div>
             </div>
             <div class="col-md-4 text-end">
-                <button class="btn-primary-glow" data-bs-toggle="modal" data-bs-target="#addModal">
+                <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                     <i class="bi bi-plus-circle me-2"></i>
                     <span>Tambah Catatan</span>
-                    <div class="btn-glow-effect"></div>
                 </button>
             </div>
         </div>
     </div>
 
-    {{-- Tabel Data Keuangan dengan Design Premium --}}
-    <div class="glass-card table-container">
+    {{-- Tabel Data Keuangan dengan Desain Lebih Bersih --}}
+    <div class="table-card">
         <div class="table-responsive">
             <table class="table table-modern">
-                <thead class="table-header-glow">
+                <thead class="table-header">
                     <tr>
                         <th width="50" class="text-center">#</th>
                         <th width="120">Tanggal</th>
@@ -180,7 +157,7 @@
                 </thead>
                 <tbody>
                     @forelse ($records as $index => $record)
-                    <tr class="table-row-hover">
+                    <tr class="table-row">
                         <td class="text-center serial-number">{{ $records->firstItem() + $index }}</td>
                         <td>
                             <div class="date-cell">
@@ -266,7 +243,7 @@
                             </div>
                             <h5 class="empty-title">Belum ada catatan keuangan</h5>
                             <p class="empty-subtitle">Mulai dengan menambahkan catatan keuangan pertama Anda</p>
-                            <button class="btn-primary-glow mt-3" data-bs-toggle="modal" data-bs-target="#addModal">
+                            <button class="btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#addModal">
                                 <i class="bi bi-plus-circle me-2"></i>Tambah Catatan Pertama
                             </button>
                         </td>
@@ -303,166 +280,136 @@
     @include('components.modals.financial-records.edit-cover')
 
     <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            --warning-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        }
-
         /* Stat Cards Modern */
         .stat-card {
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            background: var(--glass-bg);
-            box-shadow: var(--glass-shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
             overflow: hidden;
             position: relative;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .card-income-glass { background: linear-gradient(135deg, rgba(40, 167, 69, 0.9) 0%, rgba(32, 201, 151, 0.9) 100%); }
-        .card-expense-glass { background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(232, 62, 140, 0.9) 100%); }
-        .card-balance-glass { background: linear-gradient(135deg, rgba(0, 123, 255, 0.9) 0%, rgba(111, 66, 193, 0.9) 100%); }
+        .card-income { border-left: 4px solid #28a745; }
+        .card-expense { border-left: 4px solid #dc3545; }
+        .card-balance { border-left: 4px solid #007bff; }
 
         .stat-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-blur-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: inherit;
-            filter: blur(10px);
-            z-index: 1;
-        }
-
-        .card-content {
-            z-index: 2;
-            position: relative;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .icon-wrapper {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(10px);
         }
+
+        .card-income .icon-wrapper { background: rgba(40, 167, 69, 0.1); }
+        .card-expense .icon-wrapper { background: rgba(220, 53, 69, 0.1); }
+        .card-balance .icon-wrapper { background: rgba(0, 123, 255, 0.1); }
 
         .icon-wrapper i {
-            font-size: 1.8rem;
-            color: white;
+            font-size: 1.5rem;
         }
 
-        .pulse-effect {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
-        }
+        .card-income .icon-wrapper i { color: #28a745; }
+        .card-expense .icon-wrapper i { color: #dc3545; }
+        .card-balance .icon-wrapper i { color: #007bff; }
 
         .card-label {
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.5px;
+            color: #6c757d;
             margin-bottom: 0.5rem;
         }
 
         .card-value {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
         }
 
         .trend-badge {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
             font-weight: 600;
-            backdrop-filter: blur(10px);
         }
 
-        .trend-badge.success { background: rgba(255, 255, 255, 0.3); color: white; }
-        .trend-badge.danger { background: rgba(255, 255, 255, 0.3); color: white; }
+        .trend-badge.success { background: rgba(40, 167, 69, 0.1); color: #28a745; }
+        .trend-badge.danger { background: rgba(220, 53, 69, 0.1); color: #dc3545; }
 
-        .floating-shapes .shape {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+        .card-footer small {
+            color: #6c757d;
+            font-size: 0.75rem;
         }
 
-        .shape-1 { width: 80px; height: 80px; top: -20px; right: -20px; }
-        .shape-2 { width: 40px; height: 40px; bottom: 20px; right: 30px; }
-        .shape-3 { width: 60px; height: 60px; bottom: -10px; left: -10px; }
-
-        /* Glass Cards */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
+        /* Chart Cards */
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-        }
-
-        .chart-container-hover {
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
-        .chart-container-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        .chart-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         .chart-header {
-            padding: 1.5rem 1.5rem 0;
+            padding: 1.25rem 1.5rem 0;
         }
 
         .chart-title {
             color: #2c3e50;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
         }
 
         .chart-subtitle {
             color: #6c757d;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            margin-bottom: 0;
         }
 
         .chart-wrapper {
             padding: 1rem;
-            min-height: 300px;
+            min-height: 280px;
+        }
+
+        .btn-chart-action {
+            background: transparent;
+            border: none;
+            color: #6c757d;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-chart-action:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: #2c3e50;
         }
 
         /* Action Bar */
         .action-bar {
-            padding: 1.5rem;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .search-container {
@@ -472,7 +419,7 @@
 
         .search-icon {
             position: absolute;
-            left: 15px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: #6c757d;
@@ -481,12 +428,12 @@
 
         .search-input {
             width: 100%;
-            padding: 12px 20px 12px 45px;
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .search-input:focus {
@@ -495,72 +442,65 @@
             box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
         }
 
-        .btn-primary-glow {
-            position: relative;
-            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        .btn-primary {
+            background: #007bff;
             border: none;
             color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-weight: 600;
-            overflow: hidden;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .btn-primary-glow:hover {
+        .btn-primary:hover {
+            background: #0069d9;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
-        }
-
-        .btn-glow-effect {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary-glow:hover .btn-glow-effect {
-            left: 100%;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
         }
 
         /* Modern Table */
+        .table-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
         .table-modern {
             --bs-table-bg: transparent;
             margin-bottom: 0;
         }
 
-        .table-header-glow {
-            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(111, 66, 193, 0.1) 100%);
-            backdrop-filter: blur(10px);
+        .table-header {
+            background: #f8f9fa;
         }
 
-        .table-header-glow th {
+        .table-header th {
             border: none;
             padding: 1rem 0.75rem;
             font-weight: 600;
             color: #2c3e50;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 0.5px;
+            border-bottom: 1px solid #e9ecef;
         }
 
-        .table-row-hover {
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        .table-row {
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f1f3f4;
         }
 
-        .table-row-hover:hover {
-            background: rgba(0, 123, 255, 0.05);
-            transform: scale(1.01);
+        .table-row:hover {
+            background: #f8f9fa;
         }
 
         .serial-number {
             font-weight: 600;
             color: #6c757d;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .date-cell {
@@ -570,7 +510,7 @@
         }
 
         .date-day {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #007bff;
         }
@@ -581,7 +521,7 @@
         }
 
         .date-month {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #2c3e50;
         }
@@ -592,22 +532,24 @@
         }
 
         .type-badge {
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .type-pemasukan {
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: white;
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.2);
         }
 
         .type-pengeluaran {
-            background: linear-gradient(135deg, #dc3545, #e83e8c);
-            color: white;
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.2);
         }
 
         .amount-cell {
@@ -616,7 +558,7 @@
 
         .amount-value {
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .amount-cell.income .amount-value { color: #28a745; }
@@ -629,16 +571,18 @@
         .description-text {
             line-height: 1.4;
             color: #2c3e50;
+            font-size: 0.9rem;
         }
 
         .cover-thumbnail {
             position: relative;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             margin: 0 auto;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
+            border: 1px solid #e9ecef;
         }
 
         .cover-image {
@@ -672,12 +616,13 @@
 
         .cover-overlay i {
             color: white;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         .no-cover {
             color: #6c757d;
             font-style: italic;
+            font-size: 0.85rem;
         }
 
         .action-buttons {
@@ -687,60 +632,62 @@
         }
 
         .btn-action {
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             border: none;
-            border-radius: 10px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
             text-decoration: none;
         }
 
         .btn-action:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
         }
 
-        .btn-info { background: linear-gradient(135deg, #17a2b8, #138496); }
-        .btn-warning { background: linear-gradient(135deg, #ffc107, #e0a800); }
-        .btn-dark { background: linear-gradient(135deg, #343a40, #23272b); }
-        .btn-danger { background: linear-gradient(135deg, #dc3545, #c82333); }
+        .btn-info { background: #17a2b8; }
+        .btn-warning { background: #ffc107; }
+        .btn-dark { background: #343a40; }
+        .btn-danger { background: #dc3545; }
 
         /* Empty State */
         .empty-state {
-            padding: 3rem 1rem;
+            padding: 2.5rem 1rem;
         }
 
         .empty-icon {
-            font-size: 4rem;
-            color: #6c757d;
+            font-size: 3rem;
+            color: #adb5bd;
             margin-bottom: 1rem;
         }
 
         .empty-title {
-            color: #2c3e50;
+            color: #495057;
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
 
         .empty-subtitle {
             color: #6c757d;
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         /* Table Footer */
         .table-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--glass-border);
-            background: rgba(255, 255, 255, 0.05);
+            padding: 1.25rem;
+            border-top: 1px solid #e9ecef;
+            background: #f8f9fa;
         }
 
         .pagination-info {
             color: #6c757d;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .pagination-modern .pagination {
@@ -749,18 +696,20 @@
         }
 
         .pagination-modern .page-link {
-            border: 1px solid var(--glass-border);
-            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #dee2e6;
+            background: white;
             color: #007bff;
             margin: 0 2px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
         }
 
         .pagination-modern .page-link:hover {
             background: #007bff;
             color: white;
-            transform: translateY(-2px);
+            border-color: #007bff;
         }
 
         .pagination-modern .page-item.active .page-link {
@@ -773,6 +722,7 @@
         @media (max-width: 768px) {
             .stat-card {
                 margin-bottom: 1rem;
+                padding: 1.25rem;
             }
             
             .card-value {
@@ -787,7 +737,15 @@
             .btn-action {
                 width: 30px;
                 height: 30px;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .chart-header {
+                padding: 1rem 1rem 0;
+            }
+            
+            .action-bar {
+                padding: 1rem;
             }
         }
     </style>

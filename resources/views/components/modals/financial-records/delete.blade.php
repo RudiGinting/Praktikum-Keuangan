@@ -100,23 +100,24 @@
 </div>
 
 <style>
-    /* Luxury Delete Modal Design */
+    /* Luxury Delete Modal Design - Enhanced */
     .luxury-delete-modal {
-        background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.95) 0%, 
-            rgba(255, 255, 255, 0.98) 100%);
-        backdrop-filter: blur(60px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-radius: 28px;
+        background: linear-gradient(165deg, 
+            rgba(255, 255, 255, 0.98) 0%, 
+            rgba(254, 242, 242, 0.95) 100%);
+        backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 24px;
         box-shadow: 
-            0 35px 80px rgba(220, 53, 69, 0.25),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            0 35px 100px rgba(239, 68, 68, 0.25),
+            0 10px 40px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9),
+            inset 0 -1px 0 rgba(239, 68, 68, 0.1);
         position: relative;
         overflow: hidden;
     }
 
-    /* Background Effects */
+    /* Background Effects - Enhanced */
     .modal-bg-effects {
         position: absolute;
         top: 0;
@@ -130,27 +131,27 @@
     .floating-orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(40px);
-        opacity: 0.4;
-        animation: float-danger 6s ease-in-out infinite;
+        filter: blur(50px);
+        opacity: 0.5;
+        animation: floatDanger 8s ease-in-out infinite;
     }
 
     .danger-orb-1 {
-        width: 180px;
-        height: 180px;
-        background: linear-gradient(45deg, #dc3545, #e83e8c);
-        top: -90px;
-        right: -90px;
+        width: 220px;
+        height: 220px;
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        top: -110px;
+        right: -110px;
         animation-delay: 0s;
     }
 
     .danger-orb-2 {
-        width: 120px;
-        height: 120px;
-        background: linear-gradient(45deg, #fd7e14, #dc3545);
-        bottom: -60px;
-        left: -60px;
-        animation-delay: 3s;
+        width: 160px;
+        height: 160px;
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        bottom: -80px;
+        left: -80px;
+        animation-delay: 2s;
     }
 
     .danger-glow {
@@ -158,33 +159,41 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 2px;
+        height: 3px;
         background: linear-gradient(90deg, 
             transparent, 
-            rgba(220, 53, 69, 0.6), 
+            rgba(239, 68, 68, 0.8), 
             transparent);
-        animation: beamMoveDanger 3s ease-in-out infinite;
+        animation: dangerBeam 4s ease-in-out infinite;
     }
 
-    @keyframes float-danger {
-        0%, 100% { transform: translateY(0px) scale(1); }
-        50% { transform: translateY(-15px) scale(1.1); }
+    @keyframes floatDanger {
+        0%, 100% { 
+            transform: translateY(0px) rotate(0deg) scale(1); 
+        }
+        33% { 
+            transform: translateY(-20px) rotate(120deg) scale(1.1); 
+        }
+        66% { 
+            transform: translateY(10px) rotate(240deg) scale(0.9); 
+        }
     }
 
-    @keyframes beamMoveDanger {
+    @keyframes dangerBeam {
         0% { transform: translateX(-100%); }
         100% { transform: translateX(100%); }
     }
 
-    /* Header */
+    /* Header - Enhanced */
     .modal-header-luxury-delete {
         background: linear-gradient(135deg, 
-            rgba(220, 53, 69, 0.9) 0%, 
-            rgba(232, 62, 140, 0.9) 100%);
+            rgba(239, 68, 68, 0.95) 0%, 
+            rgba(220, 38, 38, 0.9) 100%);
         padding: 2.5rem 2.5rem 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
         position: relative;
         z-index: 2;
+        backdrop-filter: blur(20px);
     }
 
     .header-glow-danger {
@@ -194,8 +203,9 @@
         right: 0;
         height: 100%;
         background: linear-gradient(180deg, 
-            rgba(255, 255, 255, 0.2) 0%, 
-            transparent 100%);
+            rgba(255, 255, 255, 0.3) 0%, 
+            transparent 50%,
+            rgba(239, 68, 68, 0.1) 100%);
         pointer-events: none;
     }
 
@@ -212,79 +222,106 @@
     }
 
     .danger-icon-circle {
-        width: 70px;
-        height: 70px;
-        background: rgba(255, 255, 255, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.4);
+        width: 75px;
+        height: 75px;
+        background: rgba(255, 255, 255, 0.25);
+        border: 2px solid rgba(255, 255, 255, 0.5);
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         backdrop-filter: blur(20px);
-        box-shadow: 0 8px 32px rgba(220, 53, 69, 0.3);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        transition: all 0.3s ease;
+    }
+
+    .danger-icon-circle:hover {
+        transform: scale(1.05) rotate(5deg);
+        box-shadow: 
+            0 12px 40px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .danger-icon-circle i {
-        font-size: 2rem;
+        font-size: 2.2rem;
         color: white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     .icon-pulse-danger {
         position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        border-radius: 25px;
-        animation: pulse-danger 2s ease-out infinite;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 28px;
+        animation: pulseDanger 2.5s ease-out infinite;
     }
 
-    @keyframes pulse-danger {
-        0% { transform: scale(1); opacity: 1; }
-        100% { transform: scale(1.2); opacity: 0; }
+    @keyframes pulseDanger {
+        0% { 
+            transform: scale(1); 
+            opacity: 1; 
+            border-width: 2px;
+        }
+        100% { 
+            transform: scale(1.3); 
+            opacity: 0; 
+            border-width: 1px;
+        }
     }
 
     .modal-title-luxury-delete {
         color: white;
         font-weight: 800;
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         margin: 0;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, #fff, #fecaca);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .modal-subtitle-delete {
-        color: rgba(255, 255, 255, 0.9);
+        color: rgba(255, 255, 255, 0.95);
         margin: 0.5rem 0 0 0;
-        font-size: 1rem;
+        font-size: 1.05rem;
         font-weight: 500;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .btn-close-luxury-delete {
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
-        background: rgba(255, 255, 255, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        width: 50px;
-        height: 50px;
+        background: rgba(255, 255, 255, 0.25);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 14px;
+        width: 52px;
+        height: 52px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
         backdrop-filter: blur(20px);
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         z-index: 3;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
 
     .btn-close-luxury-delete:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: rotate(90deg) scale(1.1);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.35);
+        transform: rotate(90deg) scale(1.15);
+        box-shadow: 
+            0 8px 30px rgba(0, 0, 0, 0.25),
+            0 0 0 2px rgba(255, 255, 255, 0.5);
     }
 
-    /* Body */
+    /* Body - Enhanced */
     .modal-body-luxury-delete {
         padding: 2.5rem;
         position: relative;
@@ -296,52 +333,87 @@
     }
 
     .warning-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, #fee, #fdd);
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, #fef2f2, #fee2e2);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto 1.5rem;
-        border: 3px solid #f8d7da;
-        box-shadow: 0 8px 25px rgba(220, 53, 69, 0.2);
+        border: 3px solid #fecaca;
+        box-shadow: 
+            0 15px 40px rgba(239, 68, 68, 0.25),
+            inset 0 2px 0 rgba(255, 255, 255, 0.8);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .warning-icon:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 
+            0 20px 50px rgba(239, 68, 68, 0.35),
+            inset 0 2px 0 rgba(255, 255, 255, 0.9);
     }
 
     .warning-icon i {
-        font-size: 2.5rem;
-        color: #dc3545;
+        font-size: 2.8rem;
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
     }
 
     .warning-title {
-        color: #2d3748;
-        font-weight: 700;
-        font-size: 1.5rem;
+        color: #1e293b;
+        font-weight: 800;
+        font-size: 1.6rem;
         margin-bottom: 1rem;
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .warning-message {
-        color: #6c757d;
+        color: #64748b;
         font-size: 1.1rem;
         margin-bottom: 2rem;
         line-height: 1.6;
+        font-weight: 500;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .warning-details {
-        background: rgba(248, 215, 218, 0.3);
-        border: 1px solid rgba(220, 53, 69, 0.2);
+        background: rgba(254, 226, 226, 0.4);
+        border: 2px solid rgba(254, 202, 202, 0.6);
         border-radius: 16px;
-        padding: 1.5rem;
-        backdrop-filter: blur(10px);
+        padding: 1.75rem;
+        backdrop-filter: blur(20px);
+        box-shadow: 
+            0 8px 30px rgba(239, 68, 68, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+    }
+
+    .warning-details:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 12px 40px rgba(239, 68, 68, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
 
     .detail-item {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        margin-bottom: 0.75rem;
-        color: #856404;
-        font-size: 0.9rem;
+        margin-bottom: 0.85rem;
+        color: #92400e;
+        font-size: 0.92rem;
+        font-weight: 600;
+        padding: 0.5rem 0;
     }
 
     .detail-item:last-child {
@@ -349,22 +421,27 @@
     }
 
     .detail-item i {
-        color: #dc3545;
-        font-size: 1rem;
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 1.1rem;
+        text-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
     }
 
-    /* Footer */
+    /* Footer - Enhanced */
     .modal-footer-luxury-delete {
         padding: 2rem 2.5rem;
         background: linear-gradient(180deg, 
-            rgba(248, 249, 250, 0.9) 0%, 
-            rgba(255, 255, 255, 0.9) 100%);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+            rgba(254, 242, 242, 0.95) 0%, 
+            rgba(255, 255, 255, 0.95) 100%);
+        border-top: 1px solid rgba(254, 226, 226, 0.8);
         display: flex;
         justify-content: flex-end;
         gap: 1rem;
         position: relative;
         z-index: 2;
+        backdrop-filter: blur(20px);
     }
 
     .footer-glow-danger {
@@ -372,29 +449,37 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 2px;
         background: linear-gradient(90deg, 
             transparent, 
-            rgba(220, 53, 69, 0.5), 
+            rgba(239, 68, 68, 0.6), 
             transparent);
+        animation: footerGlowDanger 3s ease-in-out infinite;
     }
 
-    /* Buttons */
+    @keyframes footerGlowDanger {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+    }
+
+    /* Buttons - Enhanced */
     .btn-luxury-delete {
         position: relative;
-        padding: 16px 32px;
+        padding: 18px 36px;
         border: none;
-        border-radius: 16px;
-        font-weight: 700;
-        font-size: 1rem;
+        border-radius: 18px;
+        font-weight: 800;
+        font-size: 1.05rem;
         display: flex;
         align-items: center;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         overflow: hidden;
         backdrop-filter: blur(20px);
         cursor: pointer;
-        min-width: 140px;
+        min-width: 160px;
         justify-content: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .btn-content {
@@ -406,30 +491,40 @@
 
     .btn-cancel-delete {
         background: linear-gradient(135deg, 
-            rgba(108, 117, 125, 0.9) 0%, 
-            rgba(73, 80, 87, 0.9) 100%);
+            rgba(107, 114, 128, 0.95) 0%, 
+            rgba(75, 85, 99, 0.9) 100%);
         color: white;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 4px 20px rgba(108, 117, 125, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 
+            0 8px 30px rgba(107, 114, 128, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
     }
 
     .btn-cancel-delete:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(108, 117, 125, 0.4);
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 
+            0 15px 50px rgba(107, 114, 128, 0.6),
+            0 0 0 2px rgba(255, 255, 255, 0.8),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .btn-confirm-delete {
         background: linear-gradient(135deg, 
-            rgba(220, 53, 69, 0.9) 0%, 
-            rgba(232, 62, 140, 0.9) 100%);
+            rgba(239, 68, 68, 0.95) 0%, 
+            rgba(220, 38, 38, 0.9) 100%);
         color: white;
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        box-shadow: 0 4px 25px rgba(220, 53, 69, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 
+            0 8px 30px rgba(239, 68, 68, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
     }
 
     .btn-confirm-delete:hover:not(:disabled) {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 40px rgba(220, 53, 69, 0.6);
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 
+            0 15px 50px rgba(239, 68, 68, 0.6),
+            0 0 0 2px rgba(255, 255, 255, 0.8),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .btn-confirm-delete:disabled {
@@ -446,9 +541,9 @@
         height: 100%;
         background: linear-gradient(90deg, 
             transparent, 
-            rgba(255, 255, 255, 0.4), 
+            rgba(255, 255, 255, 0.6), 
             transparent);
-        transition: left 0.6s ease;
+        transition: left 0.8s ease;
     }
 
     .btn-luxury-delete:hover .btn-glow {
@@ -463,13 +558,13 @@
         height: 200%;
         background: linear-gradient(45deg, 
             transparent, 
-            rgba(255, 255, 255, 0.1), 
+            rgba(255, 255, 255, 0.2), 
             transparent);
         transform: rotate(45deg);
-        animation: shine-danger 3s ease-in-out infinite;
+        animation: shineDanger 4s ease-in-out infinite;
     }
 
-    @keyframes shine-danger {
+    @keyframes shineDanger {
         0% { transform: rotate(45deg) translateX(-100%); }
         100% { transform: rotate(45deg) translateX(100%); }
     }
@@ -500,6 +595,7 @@
         
         .btn-luxury-delete {
             width: 100%;
+            padding: 16px 24px;
         }
         
         .header-content-delete {
@@ -509,21 +605,48 @@
         }
         
         .danger-icon-circle {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
         }
         
         .danger-icon-circle i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
-        
+
+        .modal-title-luxury-delete {
+            font-size: 1.6rem;
+        }
+
         .warning-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .warning-icon i {
+            font-size: 2.4rem;
+        }
+
+        .warning-title {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .luxury-delete-modal {
+            border-radius: 20px;
+            margin: 1rem;
         }
         
-        .warning-icon i {
-            font-size: 2rem;
+        .modal-body-luxury-delete {
+            padding: 1.5rem;
+        }
+        
+        .warning-details {
+            padding: 1.25rem;
+        }
+        
+        .detail-item {
+            font-size: 0.85rem;
         }
     }
 </style>
