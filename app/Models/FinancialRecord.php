@@ -23,7 +23,7 @@ class FinancialRecord extends Model
 
     protected $casts = [
         'date' => 'date',
-        'amount' => 'decimal:2',
+        'amount' => 'decimal:0',
     ];
 
     protected $appends = ['cover_url', 'formatted_amount'];

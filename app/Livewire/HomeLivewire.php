@@ -33,7 +33,14 @@ class HomeLivewire extends Component
     public $isEditMode = false;
 
     // Reset properti untuk form
-    private function resetInput()
+    public function resetInput()
+    {
+        $this->reset(['id', 'type', 'amount', 'date', 'description', 'cover', 'editCover', 'isEditMode']);
+        $this->resetErrorBag();
+    }
+
+    // Method batal - UBAH DARI PRIVATE KE PUBLIC
+    public function batal()
     {
         $this->reset(['id', 'type', 'amount', 'date', 'description', 'cover', 'editCover', 'isEditMode']);
         $this->resetErrorBag();

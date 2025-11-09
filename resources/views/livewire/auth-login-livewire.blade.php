@@ -3,7 +3,8 @@
         <div class="card-body">
             <div>
                 <div class="text-center">
-                      <img src="/assets/uang.png" alt="duit" width="150" height="150">
+                     <img src="{{ asset('assets/vendor/uang.png') }}" alt="duit" width="150" height="150">
+
 
                     <h2>Masuk</h2>
                 </div>
