@@ -387,46 +387,45 @@
     }
 
     .warning-details {
-        background: rgba(254, 226, 226, 0.4);
-        border: 2px solid rgba(254, 202, 202, 0.6);
-        border-radius: 16px;
-        padding: 1.75rem;
-        backdrop-filter: blur(20px);
+        background: linear-gradient(145deg, #4a0404, #3b0707); /* Dark red gradient */
+        border: 1px solid rgba(255, 107, 107, 0.2);
+        border-radius: 16px; /* Larger radius */
+        padding: 2rem;
+        margin-top: 2.5rem;
+        text-align: left; /* Align text to the left */
         box-shadow: 
-            0 8px 30px rgba(239, 68, 68, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            inset 0 2px 4px rgba(0, 0, 0, 0.4),
+            0 10px 30px rgba(127, 29, 29, 0.3);
         transition: all 0.3s ease;
     }
 
     .warning-details:hover {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
         box-shadow: 
-            0 12px 40px rgba(239, 68, 68, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            inset 0 2px 4px rgba(0, 0, 0, 0.4),
+            0 15px 40px rgba(127, 29, 29, 0.4);
+        border-color: rgba(255, 107, 107, 0.3);
     }
 
     .detail-item {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.85rem;
-        color: #92400e;
-        font-size: 0.92rem;
-        font-weight: 600;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        color: #fecaca; /* Light red text for contrast */
+        font-size: 0.95rem;
+        font-weight: 500; /* Medium weight */
         padding: 0.5rem 0;
+        transition: all 0.3s ease;
     }
 
     .detail-item:last-child {
         margin-bottom: 0;
     }
 
-    .detail-item i {
-        background: linear-gradient(135deg, #ef4444, #dc2626);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-size: 1.1rem;
-        text-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+    .detail-item:hover {
+        color: #ffffff; /* White on hover */
+        transform: translateX(5px);
     }
 
     /* Footer - Enhanced */

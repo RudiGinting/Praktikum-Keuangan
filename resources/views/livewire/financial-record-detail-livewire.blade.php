@@ -1,106 +1,131 @@
 <style>
-    /* === Tema Mewah & Elegan === */
+    /* === Tema Elegan & Mewah V2 === */
     body {
-        background: linear-gradient(135deg, #e6ecff 0%, #f9f9ff 100%);
+        background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
         font-family: "Poppins", sans-serif;
+        color: #4a5568; /* Dark Gray for text */
     }
 
     .card {
-        border-radius: 1.25rem !important;
+        border-radius: 1.5rem !important;
         overflow: hidden;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
-        background: rgba(255, 255, 255, 0.85);
-        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.6) !important;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
     }
 
     .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
     }
 
     .card-header {
         border: none;
-        background: linear-gradient(90deg, #0d6efd, #4e9eff);
-        color: #fff !important;
+        background: #ffffff;
+        border-bottom: 1px solid #e2e8f0 !important;
+        color: #2d3748 !important;
         font-weight: 600;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.5px;
     }
 
     .card-title i {
-        color: #ffc107;
+        color: #4299e1; /* Soft Blue */
     }
 
     .btn-light {
-        background-color: #fff;
-        border: none;
-        color: #0d6efd;
-        font-weight: 500;
+        background-color: #edf2f7;
+        border: 1px solid #e2e8f0;
+        color: #4a5568;
+        font-weight: 600;
         transition: all 0.3s ease;
     }
 
     .btn-light:hover {
-        background-color: #e7f0ff;
-        color: #084298;
+        background-color: #e2e8f0;
+        color: #2d3748;
+        border-color: #cbd5e1;
+        transform: translateY(-2px);
     }
 
     .card-body dl dt {
         font-weight: 500;
-        color: #6c757d;
+        color: #718096; /* Medium Gray */
     }
 
     .card-body dl dd {
-        color: #212529;
+        color: #2d3748; /* Darker Gray */
     }
 
     .badge {
         padding: 0.6em 1em;
         font-size: 0.9rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border: none;
+    }
+
+    .badge.bg-success {
+        background: linear-gradient(135deg, #48bb78, #38a169) !important;
+        color: #fff !important;
+    }
+
+    .badge.bg-danger {
+        background: linear-gradient(135deg, #f56565, #e53e3e) !important;
+        color: #fff !important;
     }
 
     .border.rounded.p-3.bg-light {
-        background-color: #f8f9fa !important;
-        border: 1px solid #dee2e6 !important;
-        border-radius: 0.75rem !important;
+        background-color: #f7fafc !important;
+        border: 1px solid #edf2f7 !important;
+        border-radius: 1rem !important;
+        color: #4a5568;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
     }
 
     img.rounded.shadow {
-        border: 3px solid #fff;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        border: 4px solid #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
     }
 
     img.rounded.shadow:hover {
-        transform: scale(1.03);
-    }
-
-    .btn-outline-danger, .btn-outline-primary {
-        border-width: 2px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        border-radius: 50px;
-        padding: 0.4rem 1rem;
-    }
-
-    .btn-outline-danger:hover {
-        background-color: #dc3545;
-        color: #fff;
-    }
-
-    .btn-outline-primary:hover {
-        background-color: #0d6efd;
-        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     }
 
     .alert {
         border-radius: 1rem;
-        background: linear-gradient(135deg, #ffe8e8, #fff4f4);
-        border: 1px solid #f5c2c7;
+        background: linear-gradient(135deg, #fff5f5, #fed7d7);
+        border: 1px solid #fbb6b6;
+        color: #9b2c2c;
     }
 
     .alert i {
-        color: #dc3545;
+        color: #e53e3e;
+    }
+
+    .alert .btn-primary {
+        background-color: #e53e3e;
+        border-color: #c53030;
+    }
+
+    .alert .btn-primary:hover {
+        background-color: #c53030;
+        border-color: #9b2c2c;
+    }
+
+    .card-header.bg-light.py-3.text-primary {
+        background-color: #f7fafc !important;
+        color: #4299e1 !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .card.border-0.shadow-sm {
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+        border-radius: 1rem;
     }
 
     /* Animasi lembut */
@@ -109,7 +134,7 @@
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
+        from { opacity: 0; transform: translateY(15px); }
         to { opacity: 1; transform: translateY(0); }
     }
 </style>
